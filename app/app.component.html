@@ -1,0 +1,25 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<h1>GYM MANAGEMENT SYSTEM</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/about"><i class="material-icons">home</i>About</a></li>
+  
+    <li><a routerLink="/"><i class="material-icons">login</i> Login</a></li>
+    <li><a routerLink="/packages"><i class="material-icons">local_offer</i> Packages</a></li>
+    <li><a routerLink="/trainers"><i class="material-icons">group</i> Trainers</a></li>
+    <li><a routerLink="/workoutplan"><i class="material-icons">fitness_center</i> Workout Plan</a></li>
+    <li><a routerLink="/product"><i class="material-icons">shopping_cart</i> Products</a></li>
+    <li><a routerLink="/cart"><i class="material-icons">shopping_cart</i> Cart</a></li>
+    <span *ngIf="cartItemCount > 0" class="cart-notification">{{ cartItemCount }}</span>
+    <li><a routerLink="/register"><i class="material-icons">person_add</i> Register</a></li>
+    <li><a routerLink="/success"></a></li>
+  </ul>
+</nav>
+
+
+<div class="app-background">
+  
+  <router-outlet></router-outlet>
+</div>
+

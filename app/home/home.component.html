@@ -1,0 +1,47 @@
+<div class="login-wrapper">
+  <h1>GYM MANAGEMENT SYSTEM</h1>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="input-group">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          [(ngModel)]="model['username']"
+          required
+        />
+        <div *ngIf="submitted && loginForm.controls.username?.invalid">
+          <div *ngIf="loginForm.controls.username?.errors?.required">
+            Username is required.
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          [(ngModel)]="model['password']"
+          required
+        />
+        <div *ngIf="submitted && loginForm.controls.password?.invalid">
+          <div *ngIf="loginForm.controls.password?.errors?.required">
+            Password is required.
+          </div>
+        </div>
+      </div>
+      <div *ngIf="submitError" class="error-message">
+        Please fill the required details.
+      </div>
+      <div *ngIf="loginSuccess" class="success-message">
+        Successfully registered!
+      </div>
+      <button [disabled]="loginForm.invalid" (click)="onSubmit(loginForm)">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
